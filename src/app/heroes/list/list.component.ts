@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrl: './list.component.css'
 })
 export class ListComponent {
-
+  public heroNames: string[] = ['Spiderman', 'Hulk', 'Ironman']
+  public heroeBorrado: boolean = false;
+  public ultimoHeroeBorrado: string | undefined = '';
+  borrarUltimoHeroe(): void {
+    this.ultimoHeroeBorrado = this.heroNames.pop();
+    this.heroeBorrado = true;
+  }
 }
+
