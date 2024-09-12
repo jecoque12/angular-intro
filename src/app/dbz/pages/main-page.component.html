@@ -13,6 +13,6 @@
   </div>
   <div class="col">
     <h4>Agregar personaje</h4>
-    <app-dbz-add-character [Character]="personasNuevo" [AddCharacter]="addCharacter"></app-dbz-add-character>
+    <app-dbz-add-character (OnNewCharacter)="addCharacter($event)"></app-dbz-add-character>
   </div>
 </div>

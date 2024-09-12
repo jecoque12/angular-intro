@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Character } from '../../interfaces/character.interface';
 
 @Component({
@@ -8,5 +8,9 @@ import { Character } from '../../interfaces/character.interface';
 })
 export class AddCharacterComponent {
   @Input() Character: Character = { nombre: '', poder: 0 };
-  @Input() AddCharacter!: (args: any) => void;
+  @Output() OnNewCharacter: EventEmitter<Character> = new EventEmitter();
+  emitCharacter(): void {
+    this.OnNewCharacter.emit(this.Character);
+    this.Character = { nombre: '', poder: 0 };
+  }
 }

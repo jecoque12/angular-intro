@@ -1,10 +1,9 @@
-<form class="row">
-  <input type="text" [(value)]="Character.nombre" class="form-control mb-2" placeholder="Nombre" />
-  <input type="number" [(value)]="Character.poder" class="form-control mb-2" placeholder="Poder" />
+<form class="row" (ngSubmit)="emitCharacter()">
+  <input type="text" [(ngModel)]="Character.nombre" name="name" class="form-control mb-2" placeholder="Nombre" />
+  <input type="number" [(ngModel)]="Character.poder" name="power" class="form-control mb-2" placeholder="Poder" />
   <br />
   <br />
   <br />
-
-  <button class="btn btn-primary" type="button">Agregar</button>
+  <button class="btn btn-primary" type="submit">Agregar</button>
+  <pre>{{Character | json}} </pre>
 </form>
-<div></div>
