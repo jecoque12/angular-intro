@@ -7,11 +7,11 @@ import { Character } from '../../interfaces/character.interface';
   styleUrl: './list.component.css'
 })
 export class ListComponent {
-  @Input() personajes: Character[] = []
-  @Output() DeleteCharacter: EventEmitter<number> = new EventEmitter();
+  @Input() characters: Character[] = []
+  @Output() DeleteCharacter: EventEmitter<string> = new EventEmitter();
 
 
-  deleteCharacter(index: number) {
+  deleteCharacter(index: string) {
     this.DeleteCharacter.emit(index);
   }
 }
