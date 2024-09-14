@@ -1,9 +1,15 @@
 <ul class="list-group">
   <li *ngFor="let personaje of personajes; let i = index; let isFirst = first; let isLast = last"
-    class="list-group-item" [ngClass]="{'list-group-item-primary':isFirst, 'list-group-item-dark':isLast}">
-    <span class="text-primary">{{i +1 }}. </span>
-    <span>{{personaje.nombre}} - </span>
-    <strong>Power: </strong>
-    <span>{{personaje.poder}}</span>
+    class="list-group-item d-flex justify-content-between align-items-center"
+    [ngClass]="{'list-group-item-primary':isFirst, 'list-group-item-dark':isLast}">
+    <div>
+      <span class="text-primary">{{i +1 }}. </span>
+      <span>{{personaje.nombre}} - </span>
+      <strong>Power: </strong>
+      <span>{{personaje.poder}}</span>
+
+    </div>
+    <button class="btn btn-danger" (click)="deleteCharacter(i)">X</button>
   </li>
+
 </ul>

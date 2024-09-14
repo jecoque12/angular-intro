@@ -12,5 +12,7 @@ export class MainPageComponent {
   addCharacter(character: Character) {
     this.personajes.push({ nombre: character.nombre, poder: character.poder });
   }
-
+  deleteCharacter(index: number): void {
+    this.personajes.splice(index, 1);
+  }
 }
